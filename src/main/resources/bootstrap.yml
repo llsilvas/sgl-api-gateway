@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: sgl-config-server
+      profile: dev
+      label: main
+  rabbitmq:
+    host: localhost
+    password: guest
+    port: 5672
+    username: guest
+  application:
+    name: sgl-api-gateway
+
+eureka:
+  client:
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER:http://localhost:8761/eureka}
+    healthcheck:
+      enabled: true
